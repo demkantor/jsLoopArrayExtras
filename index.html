@@ -4,10 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JS Extra Challenges: array/loops</title>
+    <link rel="stylesheet" href="stylesheet.css">
+  <title>JS Extra Challenges: array/loops</title>
     <script src="client.js"></script>
 </head>
 <body>
+    <div class="wrapper">
+
+<div class="left">
+<div class="front">
+  <div class="sectionWrap">
     <h1>JS Extra Challenges: array/loops</h1>
+    <p>w/ added functionality and style!</p>
+  <br>
+    <p class="preview">Decided To have some fun with an old assignment and try to bring it back to life a bit as a teaching aid.</p>
+    <button class="openB"><p>Read more...</p></button>
+  </div>
+</div>
+<div class="back">
+  <div class="sectionWrap">
+  <h1>An idea came to me...</h1>
+    <br><br>
+    <p>Decided To have some fun with an old assignment and try to bring it back to life a bit as a teaching aid. I took an extra assignment we were given over our winter break and added functions to them. <br>Here, let me show you.</br></p>
+  </div>
+</div>
+</div>
+<div class="middle">
+<div class="sectionWrap">
+  <h1>So I took some old stuff...</h1>
+    <br><br>
+    <p>Orginal directions were to do some basic loops of a given array to find different values. <br>Such as length, does it include a word, and display words ending in "ing", etc.</br>
+    </p>
+</div>
+</div>
+<div class="right">
+  <div class="sectionWrap">
+  <h1>And added functions!</h1>
+    <br><br>
+    <p>This is good stuff to learn no doubt, but once i learned the basic concepts of functions I had to keep practicing! <br>See console for what I did</br><br>Oh, and i added some style here too...</br></p>
+  </div>
+<button class="closeB">✕</button>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(function(){
+$(".openB").click(function(){
+$(".left").addClass("open");
+setTimeout(function(){
+  $(".right").addClass("open");
+}, 250);
+setTimeout(function(){
+  $(".back").addClass("open");
+}, 350);
+$(".closeB").delay(1000).fadeIn();
+});
+
+$(".closeB").click(function(){
+setTimeout(function(){
+  $(".left").removeClass("open");
+}, 250);
+$(".right").removeClass("open");
+setTimeout(function(){
+  $(".back").removeClass("open");
+}, 600);
+$(".closeB").fadeOut();
+});
+});
+</script>
 </body>
 </html>
