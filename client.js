@@ -1,4 +1,5 @@
 console.log("here we go");
+
 let allTheWords = [ 'calculating', 'guitar', 'various', 'thirsty', 'history', 'friend', 'discreet', 'godly', 'grip', 'wait', 'humor',
 'agonizing', 'jazzy', 'sail', 'love', 'crow', 'giants', 'ball', 'curl', 'vivacious', 'excuse', 'extend', 'black', 'rabid', 'shirt',
 'prefer', 'cup', 'mundane', 'nimble', 'unbiased', 'meal', 'overflow', 'rhetorical', 'clam', 'dusty', 'dirty', 'understood', 'royal',
@@ -9,11 +10,22 @@ let allTheWords = [ 'calculating', 'guitar', 'various', 'thirsty', 'history', 'f
 'day', 'book', 'curve', 'mend', 'fortunate', 'breezy', 'tremble', 'hall', 'house' ];
 
 // console.log how many words are in the array
-console.log("length of this array is", allTheWords.length);
+function howLong(array) {
+  return ("The length of this array is " + array.length + " words.");
+}//finds length of array
+console.log(howLong(allTheWords));
+
 
 // console.log "true" if allTheWords contains the word "error", "false" if it does not
-console.log(allTheWords.includes("error"));// returns true or false
-console.log(allTheWords.includes("sailfish")); //test
+function doesItHave(thisWord) {
+  if (allTheWords.includes(thisWord) === true){
+    return (true + ", The array inludes: " + (thisWord));
+  }
+    return (false + ", The array does not include: " + (thisWord));
+}//searches array for a value and returns true or false
+console.log(doesItHave("error"));
+console.log(doesItHave("sialfish"));
+
 
 // console.log an array of all words that are longer than 7 characters
 function wordLength(number){
@@ -22,7 +34,6 @@ function wordLength(number){
 }//returns array of words shorter or equal to given number
 
 console.log(wordLength(7));
-
 
 
 // console.log an array of all words that do not contain the letter "e"
@@ -55,9 +66,9 @@ startsWithEndsWith("s", "ing");
 
 // console.log the average word length in the array
 
-const sum = allTheWords.reduce((a, b) => a + b);
-const newSum = sum.length;
-const avg = (newSum / allTheWords.length);
+let sum = allTheWords.reduce((a, b) => a + b);
+let newSum = sum.length;
+let avg = (newSum / allTheWords.length);
 
 console.log("the avrage word length in the array allTheWords is: ", avg);
 
@@ -65,8 +76,8 @@ console.log("the avrage word length in the array allTheWords is: ", avg);
 
 // console.log an array of all words shorter than the average word length
 function shorterThan(number){
-  let someOfTheWords = allTheWords.filter(word => word.length < avg);
-  return ("Here is the list of words shorter than avrage number of letters:", someOfTheWords);
-}//returns array of words shorter or equal to given number
+  let someOfTheWords = allTheWords.filter(word => word.length < number);
+  return (someOfTheWords);
+}//returns array of words shorter than given number (or variable that equals a number)
 
-console.log(shorterThan());
+console.log(shorterThan(avg));
